@@ -3,11 +3,18 @@ document.addEventListener('DOMContentLoaded', () => {
     // 1. Luxury Loader
     const loader = document.querySelector('.loader-wrapper');
     window.addEventListener('load', () => {
+    setTimeout(() => {
+        loader.style.opacity = '0';
+
+        document.body.style.overflow = 'auto';
+        document.documentElement.style.overflow = 'auto';
+
         setTimeout(() => {
-            loader.style.opacity = '0';
-            setTimeout(() => loader.remove(), 500);
-        }, 1500);
-    });
+            loader.remove();
+        }, 500);
+
+    }, 1500);
+});
 
     // 2. Custom Cursor
     const cursorDot = document.querySelector('.cursor-dot');
